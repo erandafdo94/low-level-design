@@ -74,6 +74,28 @@ If a program is using a base class, the reference for the base class should be r
 
 Basically, the derived types must be substitutes for their base type.
 
+```csharp
+//See the above calculate bonus of OCP. Lets say i want to add a "TemporaryEmployee Type" but temp employee dont have any bonuses. We need to solve this is LSP. HOW? see below exmple
+
+public interface IEmployee {
+    GetSalary();
+}
+
+public interface IEmployeeBonus{
+    CalculateBonus();
+}
+
+//now i can use the correct interface depending on the emp type
+
+public class TempEmp : IEmployee{
+
+}
+
+public class PermEmp : IEmployee, IEmployeeBonus {
+
+}
+```
+
 #### I - Interface segregation principles
 
 > Many client specific interfaces are better than one general purpose interface.
@@ -117,3 +139,7 @@ interface IPrintDuplexContent{}
 > One should depend on abstraction instead on concretion
 
 Abstractions should not depend on details, whereas the details should depend on abstractions.
+
+Higher level modules should not depend on lower level modules. Both should depend on abstraction.
+
+well everyone knows this. This is there "dependency injection" comes from. Inversion of control.
