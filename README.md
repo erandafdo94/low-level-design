@@ -1,2 +1,5 @@
-low level design study notes.
-feel free to contribute. 
+## low level design study notes.
+
+### Contents
+- Solid principles
+
